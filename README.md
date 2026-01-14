@@ -1,22 +1,22 @@
-# Vite + React + TypeScript Boilerplate 🚀
+# Vite + React + TypeScript Boilerplate 
 
 A production-ready boilerplate for building modern web applications with Vite, React, and TypeScript. Clone this repo and start building immediately!
 
 ## Features ✨
 
-- ⚡️ **Vite** - Lightning-fast development with HMR
-- ⚛️ **React 18** - Latest React with concurrent features
-- 🔷 **TypeScript** - Type safety and better DX
-- 🎨 **CSS Modules** - Scoped styling out of the box
-- 🧭 **React Router** - Declarative routing
-- 🎯 **Path Aliases** - Clean imports with `@` prefix
-- 📏 **ESLint + Prettier** - Code quality and formatting
-- 🎨 **Pre-built Components** - Reusable UI components
-- 🪝 **Custom Hooks** - Ready-to-use React hooks
-- 🛠️ **Utility Functions** - Common helpers included
-- 📱 **Responsive** - Mobile-first design approach
+-  **Vite** - Lightning-fast development with HMR
+-  **React 18** - Latest React with concurrent features
+-  **TypeScript** - Type safety and better DX
+-  **CSS Modules** - Scoped styling out of the box
+-  **React Router** - Declarative routing
+-  **Path Aliases** - Clean imports with `@` prefix
+-  **ESLint + Prettier** - Code quality and formatting
+-  **Pre-built Components** - Reusable UI components
+-  **Custom Hooks** - Ready-to-use React hooks
+-  **Utility Functions** - Common helpers included
+-  **Responsive** - Mobile-first design approach
 
-## Quick Start 🎯
+## Quick Start 
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ npm run dev
 
 The app will be running at `http://localhost:3000`
 
-## Available Scripts 📜
+## Available Scripts 
 
 ```bash
 # Start development server
@@ -69,7 +69,7 @@ npm run format
 npm run type-check
 ```
 
-## Project Structure 📁
+## Project Structure 
 
 ```
 src/
@@ -95,7 +95,7 @@ src/
 └── vite-env.d.ts       # Vite environment types
 ```
 
-## Path Aliases 🔗
+## Path Aliases 
 
 The following path aliases are configured for cleaner imports:
 
@@ -117,7 +117,7 @@ Available aliases:
 - `@styles/*` → `./src/styles/*`
 - `@assets/*` → `./src/assets/*`
 
-## Styling 🎨
+## Styling 
 
 This boilerplate uses CSS Modules for component-level styling and global CSS for shared styles.
 
@@ -144,7 +144,7 @@ Global CSS variables are defined in `src/styles/index.css`:
 }
 ```
 
-## Environment Variables 🔐
+## Environment Variables 
 
 1. Copy `.env.example` to `.env`
 2. Add your environment variables (must be prefixed with `VITE_`)
@@ -186,7 +186,7 @@ import { useFetch } from '@hooks/useFetch'
 const { data, loading, error } = useFetch<User[]>('/api/users')
 ```
 
-## Utility Functions 🛠️
+## Utility Functions 
 
 Common helpers available in `@utils/helpers`:
 
@@ -197,7 +197,7 @@ Common helpers available in `@utils/helpers`:
 - `capitalize(str)` - Capitalize strings
 - `truncate(str, length)` - Truncate strings
 
-## Customization 🎨
+## Customization 
 
 ### Changing the Theme
 
@@ -223,7 +223,7 @@ Edit `src/App.tsx`:
 
 Create components in `src/components/` or `src/components/ui/` for reusable UI elements.
 
-## Building for Production 🏗️
+## Building for Production 
 
 ```bash
 npm run build
@@ -231,7 +231,7 @@ npm run build
 
 The production-ready files will be in the `dist/` directory. Deploy this folder to your hosting service.
 
-## Deployment 🚀
+## Deployment 
 
 This project can be deployed to any static hosting service:
 
@@ -240,16 +240,3 @@ This project can be deployed to any static hosting service:
 - **GitHub Pages**: Use `gh-pages` package
 - **AWS S3**: Upload `dist/` to S3 bucket
 
-## License 📄
-
-MIT License - feel free to use this boilerplate for any project!
-
-## Contributing 🤝
-
-Feel free to submit issues and enhancement requests!
-
----
-
-**Happy coding! 🎉**
-
-Built with ❤️ using Vite, React, and TypeScript
