@@ -2,7 +2,7 @@
 
 A production-ready boilerplate for building modern web applications with Vite, React, and TypeScript. Clone this repo and start building immediately!
 
-## Features ✨
+## Features 
 
 -  **Vite** - Lightning-fast development with HMR
 -  **React 18** - Latest React with concurrent features
