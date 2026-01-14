@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
-export const useLocalStorage = <T,>(
+export const useLocalStorage = <T>(
   key: string,
   initialValue: T
 ): [T, (value: T | ((val: T) => T)) => void] => {
