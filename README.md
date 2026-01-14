@@ -1,6 +1,6 @@
 # Vite + React + TypeScript Boilerplate 
 
-A production-ready boilerplate for building modern web applications with Vite, React, and TypeScript. Clone this repo and start building immediately!
+A production-ready boilerplate for building modern web applications with Vite, React, and TypeScript.
 
 ## Features 
 
