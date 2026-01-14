@@ -1,0 +1,50 @@
+.about {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about h1 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-xl);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about > *:not(h1) {
+  margin-bottom: var(--spacing-lg);
+}
+
+.techList {
+  list-style: none;
+  padding: 0;
+}
+
+.techList li {
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.techList li:last-child {
+  border-bottom: none;
+}
+
+.structure {
+  background: rgba(0, 0, 0, 0.2);
+  padding: var(--spacing-md);
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}

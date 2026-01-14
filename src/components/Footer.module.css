@@ -1,0 +1,16 @@
+.footer {
+  background: var(--border-color);
+  padding: var(--spacing-lg);
+  text-align: center;
+  margin-top: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container p {
+  margin: var(--spacing-xs) 0;
+  opacity: 0.8;
+}
