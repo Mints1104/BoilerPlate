@@ -6,8 +6,22 @@
 
 .main {
   flex: 1;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-sm);
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .main {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .main {
+    padding: var(--spacing-lg);
+  }
 }

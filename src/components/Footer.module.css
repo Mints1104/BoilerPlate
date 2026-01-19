@@ -1,6 +1,6 @@
 .footer {
   background: var(--border-color);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   text-align: center;
   margin-top: auto;
 }
@@ -8,9 +8,23 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--spacing-sm);
 }
 
 .container p {
   margin: var(--spacing-xs) 0;
   opacity: 0.8;
+  font-size: var(--font-size-sm);
+  word-wrap: break-word;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .footer {
+    padding: var(--spacing-lg);
+  }
+
+  .container p {
+    font-size: var(--font-size-base);
+  }
 }

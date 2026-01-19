@@ -15,15 +15,28 @@
 
 .about h1 {
   font-size: var(--font-size-2xl);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  line-height: 1.2;
+  word-wrap: break-word;
 }
 
 .about > *:not(h1) {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .about h1 {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .about > *:not(h1) {
+    margin-bottom: var(--spacing-lg);
+  }
 }
 
 .techList {
@@ -34,6 +47,8 @@
 .techList li {
   padding: var(--spacing-sm) 0;
   border-bottom: 1px solid var(--border-color);
+  word-wrap: break-word;
+  line-height: 1.6;
 }
 
 .techList li:last-child {
@@ -42,9 +57,20 @@
 
 .structure {
   background: rgba(0, 0, 0, 0.2);
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm);
   border-radius: 4px;
   overflow-x: auto;
-  font-size: var(--font-size-sm);
-  line-height: 1.6;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .structure {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+  }
 }

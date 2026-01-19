@@ -1,22 +1,47 @@
 .notFound {
   text-align: center;
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-lg) var(--spacing-sm);
 }
 
 .title {
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: bold;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: var(--spacing-md);
+  line-height: 1;
 }
 
 .message {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-base);
   margin-bottom: var(--spacing-lg);
   opacity: 0.8;
+  padding: 0 var(--spacing-sm);
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .notFound {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .title {
+    font-size: 6rem;
+  }
+
+  .message {
+    font-size: var(--font-size-xl);
+    padding: 0;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .title {
+    font-size: 8rem;
+  }
 }
 
 .link {

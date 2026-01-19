@@ -2,8 +2,15 @@
   background: rgba(102, 126, 234, 0.05);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   transition: all var(--transition-normal);
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .card {
+    padding: var(--spacing-lg);
+  }
 }
 
 .card:hover {

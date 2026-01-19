@@ -6,6 +6,19 @@
   cursor: pointer;
   transition: all var(--transition-fast);
   font-size: var(--font-size-base);
+  min-height: 44px;
+  min-width: 44px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Touch devices - disable hover animations */
+@media (hover: none) {
+  .button:hover:not(:disabled) {
+    transform: none;
+  }
 }
 
 .button:hover:not(:disabled) {
