@@ -1,4 +1,5 @@
-import { Routes, Route, lazy, Suspense } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Layout from '@components/Layout'
 
 // Lazy load page components for code splitting

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Button from '@components/ui/Button'
 import Card from '@components/ui/Card'
 import SEO from '@components/SEO'
+import { siteConfig } from '@config/site.config'
 import { useCounter } from '@hooks/useCounter'
 import styles from './Home.module.css'
 
@@ -12,11 +13,14 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Home - Vite + React + TypeScript"
-        description="Production-ready boilerplate with routing, hooks, utilities, and component examples"
+        title={`Home - ${siteConfig.name}`}
+        description={siteConfig.description}
       />
       <div className={styles.home}>
-        <h1>Welcome to Vite + React + TypeScript Boilerplate! 🚀</h1>
+        <h1>
+          Welcome to {siteConfig.name}{' '}
+          {siteConfig.logo.emoji && siteConfig.logo.emoji}
+        </h1>
 
         <p className={styles.description}>
           This is a production-ready boilerplate with routing, hooks, utilities,
@@ -82,14 +86,9 @@ const Home = () => {
         <section className={styles.features} aria-labelledby="features-heading">
           <h2 id="features-heading">Features Included:</h2>
           <ul>
-            <li>✅ Vite for lightning-fast development</li>
-            <li>✅ React 18 with TypeScript</li>
-            <li>✅ React Router for navigation</li>
-            <li>✅ Path aliases configured (@components, @hooks, etc.)</li>
-            <li>✅ ESLint & Prettier for code quality</li>
-            <li>✅ CSS Modules for scoped styling</li>
-            <li>✅ Custom hooks and utilities</li>
-            <li>✅ Reusable UI components</li>
+            {siteConfig.features.map((feature, index) => (
+              <li key={index}>{feature}</li>
+            ))}
           </ul>
         </section>
       </div>

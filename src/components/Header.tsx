@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { siteConfig } from '@config/site.config'
 import styles from './Header.module.css'
 
 const Header = () => {
@@ -12,29 +13,32 @@ const Header = () => {
           <Link
             to="/"
             className={styles.logo}
-            aria-label="Home - Vite React TypeScript"
+            aria-label={`Home - ${siteConfig.name}`}
           >
-            <h1>Vite + React + TS</h1>
+            <h1>
+              {siteConfig.logo.emoji && (
+                <span role="img" aria-hidden="true">
+                  {siteConfig.logo.emoji}{' '}
+                </span>
+              )}
+              {siteConfig.logo.text}
+            </h1>
           </Link>
           <nav
             className={styles.nav}
             role="navigation"
             aria-label="Main navigation"
           >
-            <Link
-              to="/"
-              className={styles.navLink}
-              aria-label="Navigate to Home page"
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className={styles.navLink}
-              aria-label="Navigate to About page"
-            >
-              About
-            </Link>
+            {siteConfig.nav.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={styles.navLink}
+                aria-label={item.ariaLabel}
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
         </div>
       </header>

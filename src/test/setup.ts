@@ -9,3 +9,6 @@ expect.extend(matchers)
 afterEach(() => {
   cleanup()
 })
+
+// Export extended expect type
+export { expect }

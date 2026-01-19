@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { siteConfig } from '@config/site.config'
 
 interface SEOProps {
   title?: string
@@ -12,13 +13,13 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = 'Vite + React + TypeScript',
-  description = 'A production-ready boilerplate for building modern web applications with Vite, React, and TypeScript',
-  keywords = 'vite, react, typescript, boilerplate, spa, frontend',
-  author = 'Your Name',
+  title = siteConfig.name,
+  description = siteConfig.description,
+  keywords = siteConfig.seo.keywords,
+  author = siteConfig.author,
   ogType = 'website',
-  ogImage = '/og-image.png',
-  twitterCard = 'summary_large_image',
+  ogImage = siteConfig.seo.ogImage,
+  twitterCard = siteConfig.seo.twitterCard,
   canonicalUrl,
 }: SEOProps) => {
   useEffect(() => {

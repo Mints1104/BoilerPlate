@@ -1,22 +1,31 @@
-# Vite + React + TypeScript Boilerplate 
+# Vite + React + TypeScript Boilerplate 🚀
 
-A production-ready boilerplate for building modern web applications with Vite, React, and TypeScript.
+A **production-ready**, **highly customizable** boilerplate for building modern web applications with Vite, React, and TypeScript.
 
-## Features 
+> **🎨 Easy to Customize**: Rebrand the entire app in 5 minutes! See [CUSTOMIZATION.md](CUSTOMIZATION.md)
 
--  **Vite** - Lightning-fast development with HMR
--  **React 18** - Latest React with concurrent features
--  **TypeScript** - Type safety and better DX
--  **CSS Modules** - Scoped styling out of the box
--  **React Router** - Declarative routing
--  **Path Aliases** - Clean imports with `@` prefix
--  **ESLint + Prettier** - Code quality and formatting
--  **Pre-built Components** - Reusable UI components
--  **Custom Hooks** - Ready-to-use React hooks
--  **Utility Functions** - Common helpers included
--  **Responsive** - Mobile-first design approach
+## Features ✨
 
-## Quick Start 
+- **Vite** - Lightning-fast development with HMR
+- **React 18** - Latest React with concurrent features
+- **TypeScript** - Type safety and better DX
+- **CSS Modules** - Scoped styling out of the box
+- **React Router** - Declarative routing
+- **Path Aliases** - Clean imports with `@` prefix
+- **ESLint + Prettier** - Code quality and formatting
+- **Centralized Config** - Easy rebranding via config files
+- **Accessibility** - WCAG 2.1 compliant with a11y linting
+- **SEO Optimized** - Meta tags, Open Graph, Twitter Cards
+- **Error Boundaries** - Graceful error handling
+- **Performance** - Code splitting, lazy loading, React.memo
+- **PWA Ready** - Manifest, service worker support
+- **Pre-built Components** - Reusable UI components
+- **Custom Hooks** - Ready-to-use React hooks
+- **Utility Functions** - Common helpers included
+- **Responsive** - Mobile-first design approach
+- **Testing** - Vitest + React Testing Library
+
+## 🚀 Quick Customization (5 Minutes)
 
 ### Prerequisites
 
@@ -33,10 +42,6 @@ cd my-new-project
 
 # Install dependencies
 npm install
-# or
-yarn install
-# or
-pnpm install
 
 # Start development server
 npm run dev
@@ -44,7 +49,9 @@ npm run dev
 
 The app will be running at `http://localhost:3000`
 
-## Available Scripts 
+> 💡 **First time?** Check [CUSTOMIZATION.md](CUSTOMIZATION.md) to rebrand the app before you start coding!
+
+## Available Scripts
 
 ```bash
 # Start development server
@@ -69,7 +76,7 @@ npm run format
 npm run type-check
 ```
 
-## Project Structure 
+## Project Structure
 
 ```
 src/
@@ -95,7 +102,7 @@ src/
 └── vite-env.d.ts       # Vite environment types
 ```
 
-## Path Aliases 
+## Path Aliases
 
 The following path aliases are configured for cleaner imports:
 
@@ -109,6 +116,7 @@ import logo from '@assets/logo.png'
 ```
 
 Available aliases:
+
 - `@/*` → `./src/*`
 - `@components/*` → `./src/components/*`
 - `@hooks/*` → `./src/hooks/*`
@@ -116,8 +124,31 @@ Available aliases:
 - `@types/*` → `./src/types/*`
 - `@styles/*` → `./src/styles/*`
 - `@assets/*` → `./src/assets/*`
+- `@config/*` → `./src/config/*` ← **For site/theme config**
 
-## Styling 
+## Configuration 🎨
+
+### Centralized Configuration
+
+All branding and theming is centralized in two files:
+
+1. **`src/config/site.config.ts`** - Site name, nav, SEO, features
+2. **`src/config/theme.config.ts`** - Colors, fonts, spacing, breakpoints
+
+**Why?** Change your brand once, update everywhere automatically!
+
+### Example: Changing Site Name
+
+```typescript
+// src/config/site.config.ts
+export const siteConfig = {
+  name: 'My App', // ← Updates header, SEO, footer automatically
+}
+```
+
+See [CUSTOMIZATION.md](CUSTOMIZATION.md) for detailed configuration guide.
+
+## Styling
 
 This boilerplate uses CSS Modules for component-level styling and global CSS for shared styles.
 
@@ -144,7 +175,7 @@ Global CSS variables are defined in `src/styles/index.css`:
 }
 ```
 
-## Environment Variables 
+## Environment Variables
 
 1. Copy `.env.example` to `.env`
 2. Add your environment variables (must be prefixed with `VITE_`)
@@ -186,7 +217,7 @@ import { useFetch } from '@hooks/useFetch'
 const { data, loading, error } = useFetch<User[]>('/api/users')
 ```
 
-## Utility Functions 
+## Utility Functions
 
 Common helpers available in `@utils/helpers`:
 
@@ -197,7 +228,7 @@ Common helpers available in `@utils/helpers`:
 - `capitalize(str)` - Capitalize strings
 - `truncate(str, length)` - Truncate strings
 
-## Customization 
+## Customization
 
 ### Changing the Theme
 
@@ -223,7 +254,7 @@ Edit `src/App.tsx`:
 
 Create components in `src/components/` or `src/components/ui/` for reusable UI elements.
 
-## Building for Production 
+## Building for Production
 
 ```bash
 npm run build
@@ -231,7 +262,7 @@ npm run build
 
 The production-ready files will be in the `dist/` directory. Deploy this folder to your hosting service.
 
-## Deployment 
+## Deployment
 
 This project can be deployed to any static hosting service:
 
@@ -239,4 +270,3 @@ This project can be deployed to any static hosting service:
 - **Netlify**: Drag and drop `dist/` folder
 - **GitHub Pages**: Use `gh-pages` package
 - **AWS S3**: Upload `dist/` to S3 bucket
-
