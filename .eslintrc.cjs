@@ -5,11 +5,12 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
     'prettier',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'jsx-a11y'],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
@@ -19,5 +20,9 @@ module.exports = {
       'warn',
       { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
     ],
+    // Accessibility rules
+    'jsx-a11y/anchor-is-valid': 'warn',
+    'jsx-a11y/click-events-have-key-events': 'warn',
+    'jsx-a11y/no-static-element-interactions': 'warn',
   },
 }

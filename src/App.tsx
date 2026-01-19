@@ -1,18 +1,43 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, lazy, Suspense } from 'react-router-dom'
 import Layout from '@components/Layout'
-import Home from '@components/pages/Home'
-import About from '@components/pages/About'
-import NotFound from '@components/pages/NotFound'
+
+// Lazy load page components for code splitting
+const Home = lazy(() => import('@components/pages/Home'))
+const About = lazy(() => import('@components/pages/About'))
+const NotFound = lazy(() => import('@components/pages/NotFound'))
+
+// Loading fallback component
+const LoadingFallback = () => (
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '50vh',
+    }}
+  >
+    <div
+      style={{
+        fontSize: '1.25rem',
+        color: 'var(--primary-color)',
+      }}
+    >
+      Loading...
+    </div>
+  </div>
+)
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+    <Suspense fallback={<LoadingFallback />}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </Suspense>
   )
 }
 
