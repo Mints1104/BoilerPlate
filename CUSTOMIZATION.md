@@ -245,12 +245,133 @@ npx shadcn-ui@latest init
 ### Environment Variables
 
 1. Create `.env.local`:
-   ```
+   ```env
    VITE_API_URL=https://api.example.com
    VITE_APP_NAME=My App
    ```
 2. Use: `import.meta.env.VITE_API_URL`
 3. Update types in `src/vite-env.d.ts`
+
+### Contact Form Setup
+
+The boilerplate includes a production-ready contact form with multiple backend options. Choose the one that fits your hosting platform:
+
+#### **Option 1: Formspree (Easiest)**
+
+Best for: Beginners, static hosting, quick setup
+
+1. Sign up at [formspree.io](https://formspree.io) (free tier available)
+2. Create a new form and get your form ID
+3. Add to `.env.local`:
+   ```env
+   VITE_CONTACT_PROVIDER=formspree
+   VITE_FORMSPREE_ID=your_form_id
+   ```
+4. Done! Form submissions will appear in your Formspree dashboard
+
+#### **Option 2: Getform**
+
+Best for: Static sites, simple setup, webhook support
+
+1. Sign up at [getform.io](https://getform.io)
+2. Create a form endpoint
+3. Add to `.env.local`:
+   ```env
+   VITE_CONTACT_PROVIDER=getform
+   VITE_GETFORM_ENDPOINT=https://getform.io/f/your_endpoint_id
+   ```
+
+#### **Option 3: Web3Forms**
+
+Best for: Privacy-focused projects, no registration needed
+
+1. Get access key at [web3forms.com](https://web3forms.com)
+2. Add to `.env.local`:
+   ```env
+   VITE_CONTACT_PROVIDER=web3forms
+   VITE_WEB3FORMS_ACCESS_KEY=your_access_key
+   ```
+
+#### **Option 4: Netlify Forms**
+
+Best for: Netlify-hosted sites (zero configuration!)
+
+1. Add to `.env.local`:
+   ```env
+   VITE_CONTACT_PROVIDER=netlify
+   ```
+2. Netlify automatically handles form submissions
+3. View submissions in Netlify dashboard under "Forms"
+
+**Note**: Netlify Forms requires a `name` attribute on the form and `data-netlify="true"`. This is handled automatically by the ContactForm component.
+
+#### **Option 5: Custom API**
+
+Best for: Full control, existing backend, custom logic
+
+1. Create your own backend endpoint (Express, Next.js API route, etc.)
+2. Add to `.env.local`:
+   ```env
+   VITE_CONTACT_PROVIDER=custom
+   VITE_CUSTOM_API_ENDPOINT=https://your-api.com/contact
+   ```
+
+**Example backend (Express.js)**:
+
+```javascript
+app.post('/contact', async (req, res) => {
+  const { name, email, phone, message } = req.body
+
+  // Validate input
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: 'Missing required fields' })
+  }
+
+  // Send email, save to DB, etc.
+  await sendEmail({
+    to: 'admin@yourdomain.com',
+    from: email,
+    subject: `Contact from ${name}`,
+    body: message,
+  })
+
+  res.json({ success: true, message: 'Message received!' })
+})
+```
+
+#### **Adding reCAPTCHA (Recommended)**
+
+Protect against spam with Google reCAPTCHA:
+
+1. Get keys at [google.com/recaptcha](https://www.google.com/recaptcha)
+2. Add to `.env.local`:
+   ```env
+   VITE_RECAPTCHA_SITE_KEY=your_site_key
+   ```
+3. The form automatically includes reCAPTCHA when the key is present
+
+#### **Using the Contact Form**
+
+The contact form is already set up in [`src/components/pages/Contact.tsx`](src/components/pages/Contact.tsx):
+
+```tsx
+import ContactForm from '@components/ui/ContactForm'
+
+;<ContactForm
+  provider="formspree" // or your chosen provider
+  onSuccess={() => console.log('Sent!')}
+  onError={(error) => console.error(error)}
+/>
+```
+
+**Customizing the form**:
+
+- Edit [`src/components/ui/ContactForm.tsx`](src/components/ui/ContactForm.tsx) to add/remove fields
+- Edit [`src/components/ui/ContactForm.module.css`](src/components/ui/ContactForm.module.css) for styling
+- Validation rules in [`src/utils/validation.ts`](src/utils/validation.ts)
+- Security settings in [`src/utils/security.ts`](src/utils/security.ts)
+
+See [SECURITY.md](SECURITY.md) for security best practices.
 
 ---
 
@@ -269,6 +390,8 @@ Before deploying, make sure you've updated:
 - [ ] Remove example content from Home/About pages
 - [ ] Update README with your project details
 - [ ] Initialize new git repo: `git init && git add . && git commit -m "Initial commit"`
+- [ ] **If using contact form**: Set up `.env.local` with your chosen provider
+- [ ] **Security**: Review [SECURITY.md](SECURITY.md) before deploying
 
 ---
 

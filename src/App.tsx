@@ -5,6 +5,7 @@ import Layout from '@components/Layout'
 // Lazy load page components for code splitting
 const Home = lazy(() => import('@components/pages/Home'))
 const About = lazy(() => import('@components/pages/About'))
+const Contact = lazy(() => import('@components/pages/Contact'))
 const NotFound = lazy(() => import('@components/pages/NotFound'))
 
 // Loading fallback component
@@ -35,6 +36,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

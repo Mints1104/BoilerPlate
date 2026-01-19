@@ -57,6 +57,11 @@ export const siteConfig: SiteConfig = {
   nav: [
     { label: 'Home', path: '/', ariaLabel: 'Navigate to Home page' },
     { label: 'About', path: '/about', ariaLabel: 'Navigate to About page' },
+    {
+      label: 'Contact',
+      path: '/contact',
+      ariaLabel: 'Navigate to Contact page',
+    },
   ],
 
   // SEO & Social
