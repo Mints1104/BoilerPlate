@@ -20,6 +20,7 @@ export default defineConfig({
       '@assets': resolve(__dirname, './src/assets'),
       '@config': resolve(__dirname, './src/config'),
       '@services': resolve(__dirname, './src/services'),
+      '@test': resolve(__dirname, './src/test'),
     },
   },
   server: {

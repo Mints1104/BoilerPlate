@@ -1,4 +1,5 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it } from 'vitest'
+import { expect } from '@test/setup'
 import { renderHook, act } from '@testing-library/react'
 import { useCounter } from './useCounter'
 

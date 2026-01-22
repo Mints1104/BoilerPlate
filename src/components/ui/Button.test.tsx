@@ -1,4 +1,5 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, vi } from 'vitest'
+import { expect } from '@test/setup'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import Button from './Button'

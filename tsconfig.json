@@ -32,10 +32,11 @@
       "@styles/*": ["./src/styles/*"],
       "@assets/*": ["./src/assets/*"],
       "@config/*": ["./src/config/*"],
-      "@services/*": ["./src/services/*"]
+      "@services/*": ["./src/services/*"],
+      "@test/*": ["./src/test/*"]
     }
   },
   "include": ["src"],
-  "exclude": ["**/*.test.ts", "**/*.test.tsx", "src/test"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
