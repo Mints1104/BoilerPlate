@@ -62,6 +62,11 @@ export const siteConfig: SiteConfig = {
       path: '/contact',
       ariaLabel: 'Navigate to Contact page',
     },
+    {
+      label: 'Demo',
+      path: '/demo',
+      ariaLabel: 'Navigate to Feature Demo page',
+    },
   ],
 
   // SEO & Social

@@ -1,10 +1,13 @@
 :root {
-  /* Colors */
+  /* Colors - Light Mode */
   --primary-color: #646cff;
   --primary-hover: #535bf2;
-  --background-color: #242424;
-  --text-color: rgba(255, 255, 255, 0.87);
-  --border-color: #444;
+  --background-color: #ffffff;
+  --background-secondary: #f3f4f6;
+  --background-hover: #e5e7eb;
+  --text-color: #213547;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
 
   /* Spacing - Mobile first */
   --spacing-xs: 0.5rem;
@@ -26,6 +29,19 @@
   --transition-normal: 0.3s ease;
 }
 
+/* Dark Mode */
+:root.dark,
+[data-theme='dark'] {
+  --primary-color: #818cf8;
+  --primary-hover: #a5b4fc;
+  --background-color: #1f2937;
+  --background-secondary: #374151;
+  --background-hover: #4b5563;
+  --text-color: #f9fafb;
+  --text-secondary: #d1d5db;
+  --border-color: #4b5563;
+}
+
 /* Tablet and up */
 @media (min-width: 768px) {
   :root {
@@ -45,14 +61,6 @@
 @media (min-width: 1024px) {
   :root {
     --font-size-2xl: 2.5rem;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background-color: #ffffff;
-    --text-color: #213547;
-    --border-color: #ddd;
   }
 }
 

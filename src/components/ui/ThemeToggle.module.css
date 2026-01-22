@@ -1,0 +1,51 @@
+.themeToggle {
+  background: var(--background-secondary, #f3f4f6);
+  border: none;
+  border-radius: 9999px;
+  width: 60px;
+  height: 32px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 4px;
+}
+
+.themeToggle:hover {
+  background: var(--background-hover, #e5e7eb);
+}
+
+.slider {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  top: 4px;
+  left: 4px;
+}
+
+.themeToggle[data-theme='dark'] .slider {
+  transform: translateX(28px);
+}
+
+.icon {
+  font-size: 0.875rem;
+}
+
+/* Dark mode styles */
+:global(.dark) .themeToggle {
+  background: #374151;
+}
+
+:global(.dark) .themeToggle:hover {
+  background: #4b5563;
+}
+
+:global(.dark) .slider {
+  background: #1f2937;
+}

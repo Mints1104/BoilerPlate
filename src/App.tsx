@@ -7,6 +7,7 @@ import Spinner from '@components/ui/Spinner'
 const Home = lazy(() => import('@components/pages/Home'))
 const About = lazy(() => import('@components/pages/About'))
 const Contact = lazy(() => import('@components/pages/Contact'))
+const FeatureDemo = lazy(() => import('@components/pages/FeatureDemo'))
 const NotFound = lazy(() => import('@components/pages/NotFound'))
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="demo" element={<FeatureDemo />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

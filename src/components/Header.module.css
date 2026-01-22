@@ -34,6 +34,12 @@
   align-items: center;
 }
 
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
 .logo h1 {
   color: white;
   font-size: 1.125rem;
