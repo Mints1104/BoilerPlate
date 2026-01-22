@@ -10,6 +10,7 @@ import { generateId } from '@utils/helpers'
 
 const ToastContext = createContext<ToastContextType | undefined>(undefined)
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useToast = () => {
   const context = useContext(ToastContext)
   if (!context) {

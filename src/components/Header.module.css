@@ -1,15 +1,16 @@
 /* Skip link for keyboard navigation */
 .skipLink {
   position: absolute;
-  top: -40px;
+  top: -100px;
   left: 0;
   background: var(--primary-color);
   color: white;
   padding: var(--spacing-sm) var(--spacing-md);
   text-decoration: none;
-  z-index: 1000;
+  z-index: 1001;
   border-radius: 0 0 4px 0;
   font-weight: 500;
+  transition: top 0.2s;
 }
 
 .skipLink:focus {

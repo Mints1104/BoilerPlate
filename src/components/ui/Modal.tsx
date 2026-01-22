@@ -92,8 +92,19 @@ export default function Modal({
     }
   }
 
+  const handleBackdropKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Escape') {
+      onClose()
+    }
+  }
+
   const modalContent = (
-    <div className={styles.backdrop} onClick={handleBackdropClick}>
+    <div
+      className={styles.backdrop}
+      onClick={handleBackdropClick}
+      onKeyDown={handleBackdropKeyDown}
+      role="presentation"
+    >
       <div
         ref={modalRef}
         className={`${styles.modal} ${styles[size]}`}
