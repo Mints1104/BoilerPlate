@@ -1,0 +1,2 @@
+import{j as a}from"./index-BSrWAhrW.js";import{r as e}from"./react-vendor-CbP1JeEY.js";const r={button:"_button_12pge_1",primary:"_primary_12pge_38",secondary:"_secondary_12pge_43",danger:"_danger_12pge_48"},t=e.memo(({children:e,onClick:t,variant:n="primary",disabled:o=!1,type:i="button",ariaLabel:s})=>a.jsx("button",{type:i,onClick:t,disabled:o,className:`${r.button} ${r[n]}`,"aria-label":s,children:e}));t.displayName="Button";export{t as B};
+//# sourceMappingURL=Button-CMyg_pqv.js.map

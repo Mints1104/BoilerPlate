@@ -1,2 +1,0 @@
-import{j as s}from"./index-CjGm4EpV.js";import{L as a}from"./react-vendor-CbP1JeEY.js";const e="_notFound_cp5a9_1",c="_title_cp5a9_6",o="_message_cp5a9_17",n="_link_cp5a9_47",_=()=>s.jsxs("div",{className:e,children:[s.jsx("h1",{className:c,children:"404"}),s.jsx("p",{className:o,children:"Oops! Page not found."}),s.jsx(a,{to:"/",className:n,children:"Go back home"})]});export{_ as default};
-//# sourceMappingURL=NotFound-B0SBGM5I.js.map
