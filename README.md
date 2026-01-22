@@ -1,10 +1,10 @@
-# Vite + React + TypeScript Boilerplate 🚀
+# Vite + React + TypeScript Boilerplate 
 
 A **production-ready**, **highly customizable** boilerplate for building modern web applications with Vite, React, and TypeScript.
 
-> **🎨 Easy to Customize**: Rebrand the entire app in 5 minutes! See [CUSTOMIZATION.md](CUSTOMIZATION.md)
+> ** Easy to Customize**: Rebrand the entire app in 5 minutes! See [CUSTOMIZATION.md](CUSTOMIZATION.md)
 
-## Features ✨
+## Features 
 
 - **Vite** - Lightning-fast development with HMR
 - **React 18** - Latest React with concurrent features
@@ -25,7 +25,7 @@ A **production-ready**, **highly customizable** boilerplate for building modern 
 - **Responsive** - Mobile-first design approach
 - **Testing** - Vitest + React Testing Library
 
-## 🚀 Quick Customization (5 Minutes)
+##  Quick Customization (5 Minutes)
 
 ### Prerequisites
 
@@ -49,7 +49,6 @@ npm run dev
 
 The app will be running at `http://localhost:3000`
 
-> 💡 **First time?** Check [CUSTOMIZATION.md](CUSTOMIZATION.md) to rebrand the app before you start coding!
 
 ## Available Scripts
 
@@ -126,7 +125,7 @@ Available aliases:
 - `@assets/*` → `./src/assets/*`
 - `@config/*` → `./src/config/*` ← **For site/theme config**
 
-## Configuration 🎨
+## Configuration 
 
 ### Centralized Configuration
 
