@@ -1,5 +1,4 @@
-import { describe, it, vi, beforeEach, afterEach } from 'vitest'
-import { expect } from '@test/setup'
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { formatDate, sleep, debounce, generateId, capitalize } from './helpers'
 
 describe('formatDate', () => {
