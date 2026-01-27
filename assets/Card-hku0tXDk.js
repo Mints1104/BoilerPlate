@@ -1,0 +1,2 @@
+import{j as e}from"./index-BTtDf3qc.js";import{r as s}from"./react-vendor-CbP1JeEY.js";const a="_card_1e641_1",r="_title_1e641_21",c="_content_1e641_27",i=s.memo(({title:s,children:i,className:l=""})=>e.jsxs("article",{className:`${a} ${l}`,children:[s&&e.jsx("h3",{className:r,children:s}),e.jsx("div",{className:c,children:i})]}));i.displayName="Card";export{i as C};
+//# sourceMappingURL=Card-hku0tXDk.js.map
