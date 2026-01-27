@@ -21,7 +21,7 @@ const Header = () => {
             aria-label={`Home - ${siteConfig.name}`}
             onClick={() => setIsMenuOpen(false)}
           >
-            <h1>
+            <span className={styles.logoTitle}>
               {logoImage ? (
                 <img
                   className={styles.logoImage}
@@ -36,7 +36,7 @@ const Header = () => {
                 </span>
               ) : null}
               {siteConfig.logo.text}
-            </h1>
+            </span>
           </Link>
           <div className={styles.rightSection}>
             <button
@@ -59,17 +59,31 @@ const Header = () => {
               role="navigation"
               aria-label="Main navigation"
             >
-              {siteConfig.nav.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={styles.navLink}
-                  aria-label={item.ariaLabel}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {siteConfig.nav.map((item) =>
+                item.external ? (
+                  <a
+                    key={item.path}
+                    href={item.path}
+                    className={styles.navLink}
+                    aria-label={item.ariaLabel}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={styles.navLink}
+                    aria-label={item.ariaLabel}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              )}
             </nav>
             <ThemeToggle />
           </div>

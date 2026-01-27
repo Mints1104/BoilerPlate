@@ -24,20 +24,27 @@ export default function Modal({
   closeOnEscape = true,
 }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null)
+  const previousActiveElement = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
     if (!isOpen) return
+
+    previousActiveElement.current = document.activeElement as HTMLElement | null
 
     // Focus trap
     const focusableElements = modalRef.current?.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
     )
-    const firstElement = focusableElements?.[0] as HTMLElement
+    const firstElement = focusableElements?.[0] as HTMLElement | undefined
     const lastElement = focusableElements?.[
-      focusableElements.length - 1
-    ] as HTMLElement
+      (focusableElements?.length || 0) - 1
+    ] as HTMLElement | undefined
 
-    firstElement?.focus()
+    if (firstElement) {
+      firstElement.focus()
+    } else {
+      modalRef.current?.focus()
+    }
 
     const handleTabKey = (e: KeyboardEvent) => {
       if (e.key !== 'Tab') return
@@ -56,7 +63,11 @@ export default function Modal({
     }
 
     document.addEventListener('keydown', handleTabKey)
-    return () => document.removeEventListener('keydown', handleTabKey)
+    return () => {
+      document.removeEventListener('keydown', handleTabKey)
+      previousActiveElement.current?.focus()
+      previousActiveElement.current = null
+    }
   }, [isOpen])
 
   useEffect(() => {
@@ -104,6 +115,8 @@ export default function Modal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? 'modal-title' : undefined}
+        aria-label={!title ? 'Dialog' : undefined}
+        tabIndex={-1}
       >
         {(title || showCloseButton) && (
           <div className={styles.header}>

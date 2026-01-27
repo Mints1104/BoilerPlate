@@ -94,7 +94,6 @@ class ApiClient {
    */
   setAuth(token: string) {
     this.authToken = token
-    localStorage.setItem('authToken', token)
   }
 
   /**
@@ -102,18 +101,13 @@ class ApiClient {
    */
   clearAuth() {
     this.authToken = null
-    localStorage.removeItem('authToken')
   }
 
   /**
    * Load auth token from storage
    */
   loadAuth() {
-    const token = localStorage.getItem('authToken')
-    if (token) {
-      this.authToken = token
-    }
-    return token
+    return null
   }
 
   /**
@@ -182,7 +176,6 @@ class ApiClient {
 // Create and export a singleton instance
 export const apiClient = new ApiClient()
 
-// Load auth token on initialization
-apiClient.loadAuth()
+// Auth tokens are kept in memory only
 
 export default apiClient

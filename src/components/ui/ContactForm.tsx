@@ -14,6 +14,7 @@ export default function ContactForm({
   onSuccess,
   onError,
 }: ContactFormProps) {
+  const isNetlify = provider === 'netlify'
   const {
     formData,
     errors,
@@ -47,9 +48,19 @@ export default function ContactForm({
     <form
       className={styles.contactForm}
       onSubmit={onSubmit}
+      method="POST"
       noValidate
       aria-label="Contact form"
+      data-netlify={isNetlify ? 'true' : undefined}
+      name={isNetlify ? 'contact' : undefined}
+      data-netlify-honeypot={isNetlify ? 'bot-field' : undefined}
     >
+      {isNetlify && (
+        <>
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="bot-field" />
+        </>
+      )}
       <div className={styles.formGroup}>
         <label htmlFor="name" className={styles.label}>
           Name{' '}
