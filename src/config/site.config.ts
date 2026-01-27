@@ -22,6 +22,10 @@ interface SiteConfig {
   logo: {
     text: string
     emoji?: string
+    image?: {
+      src: string
+      alt: string
+    }
   }
   nav: NavItem[]
   seo: {
@@ -51,6 +55,10 @@ export const siteConfig: SiteConfig = {
   logo: {
     text: 'Vite + React + TS',
     emoji: '🚀', // Optional emoji
+    // image: {
+    //   src: '/logo.svg',
+    //   alt: 'Vite + React + TS logo',
+    // },
   },
 
   // Navigation

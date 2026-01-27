@@ -33,12 +33,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--spacing-sm);
+  position: relative;
 }
 
 .rightSection {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
+}
+
+.logo {
+  text-decoration: none;
 }
 
 .logo h1 {
@@ -48,21 +54,83 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 60vw;
+}
+
+.logoImage {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.logoEmoji {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.menuButton {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.menuButton:hover {
+  background: transparent;
+  border-color: var(--primary-color);
+}
+
+.menuButton:active {
+  transform: scale(0.98);
+}
+
+.menuIcon {
+  font-size: 1.25rem;
+  line-height: 1;
 }
 
 .nav {
+  display: none;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: var(--spacing-sm);
+  background: var(--background-color);
+  padding: var(--spacing-sm);
+  border-radius: 12px;
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 1px var(--border-color);
+  min-width: 180px;
+  backdrop-filter: blur(10px);
+}
+
+.navOpen {
   display: flex;
-  gap: var(--spacing-sm);
-  flex-wrap: wrap;
-  justify-content: flex-end;
 }
 
 .navLink {
-  color: white;
+  color: var(--text-color);
   font-weight: 500;
   padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: 4px;
-  transition: background var(--transition-fast);
+  border-radius: 8px;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
   white-space: nowrap;
   font-size: var(--font-size-sm);
   min-height: 44px;
@@ -71,8 +139,8 @@
 }
 
 .navLink:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: var(--background-hover);
+  color: var(--primary-color);
 }
 
 /* Tablet and up */
@@ -89,8 +157,24 @@
     font-size: var(--font-size-xl);
   }
 
+  .logoImage {
+    width: 36px;
+    height: 36px;
+  }
+
+  .menuButton {
+    display: none;
+  }
+
   .nav {
+    position: static;
+    display: flex;
+    flex-direction: row;
     gap: var(--spacing-md);
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    min-width: auto;
   }
 
   .navLink {

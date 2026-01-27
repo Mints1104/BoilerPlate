@@ -4,6 +4,8 @@ import { useApi, useApiMutation } from '@hooks/useApi'
 import Modal from '@components/ui/Modal'
 import Button from '@components/ui/Button'
 import Card from '@components/ui/Card'
+import Carousel from '@components/ui/Carousel'
+import PhoneFrame from '@components/ui/PhoneFrame'
 
 /**
  * Demo page showcasing Toast, API Client, and Modal features
@@ -21,6 +23,115 @@ export default function FeatureDemo() {
     immediate: false,
   })
   const { mutate, loading: mutating } = useApiMutation('/users', 'post')
+
+  const carouselItems = [
+    {
+      id: 'phone-1',
+      content: (
+        <PhoneFrame title="Daily Overview" device="iphone">
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.75rem',
+              color: 'white',
+            }}
+          >
+            <div
+              style={{
+                padding: '0.75rem 1rem',
+                borderRadius: '16px',
+                background: 'rgba(255, 255, 255, 0.12)',
+              }}
+            >
+              <strong>Good morning 👋</strong>
+              <p style={{ margin: '0.25rem 0 0', opacity: 0.8 }}>
+                Your tasks are on track.
+              </p>
+            </div>
+            <div
+              style={{
+                padding: '0.75rem 1rem',
+                borderRadius: '16px',
+                background: 'rgba(99, 102, 241, 0.4)',
+              }}
+            >
+              <strong>Focus Mode</strong>
+              <p style={{ margin: '0.25rem 0 0', opacity: 0.8 }}>
+                2h 15m left today
+              </p>
+            </div>
+            <div
+              style={{
+                padding: '0.75rem 1rem',
+                borderRadius: '16px',
+                background: 'rgba(16, 185, 129, 0.35)',
+              }}
+            >
+              <strong>Streak</strong>
+              <p style={{ margin: '0.25rem 0 0', opacity: 0.8 }}>
+                7 days of momentum
+              </p>
+            </div>
+          </div>
+        </PhoneFrame>
+      ),
+      caption: 'iPhone-style frame with realistic notch and home indicator.',
+    },
+    {
+      id: 'phone-2',
+      content: (
+        <PhoneFrame title="Messages" device="pixel">
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.75rem',
+              color: 'white',
+            }}
+          >
+            <div
+              style={{
+                alignSelf: 'flex-end',
+                padding: '0.6rem 0.9rem',
+                borderRadius: '999px',
+                background: 'rgba(59, 130, 246, 0.6)',
+              }}
+            >
+              We shipped the update 🚀
+            </div>
+            <div
+              style={{
+                alignSelf: 'flex-start',
+                padding: '0.6rem 0.9rem',
+                borderRadius: '999px',
+                background: 'rgba(255, 255, 255, 0.15)',
+              }}
+            >
+              Nice! Let’s share the preview.
+            </div>
+            <div
+              style={{
+                alignSelf: 'flex-end',
+                padding: '0.6rem 0.9rem',
+                borderRadius: '999px',
+                background: 'rgba(59, 130, 246, 0.6)',
+              }}
+            >
+              Carousel + phone frame look 👌
+            </div>
+          </div>
+        </PhoneFrame>
+      ),
+      caption: 'Google Pixel-style frame with camera punch-hole design.',
+    },
+    {
+      id: 'image-1',
+      src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Product team collaborating',
+      caption: 'Drop in hero images, product shots, or marketing visuals.',
+    },
+  ]
 
   const handleApiTest = async () => {
     try {
@@ -219,6 +330,16 @@ export default function FeatureDemo() {
             <li>TypeScript support</li>
           </ul>
         </div>
+      </Card>
+
+      {/* Dark Mode Info */}
+      <Card>
+        <h2>📱 Product Showcase</h2>
+        <p style={{ marginBottom: '1rem', color: 'var(--text-secondary)' }}>
+          Highlight mobile screens or marketing images with a polished carousel
+          and optional phone frame.
+        </p>
+        <Carousel items={carouselItems} autoPlay interval={6000} />
       </Card>
 
       {/* Dark Mode Info */}

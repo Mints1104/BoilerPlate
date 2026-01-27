@@ -1,0 +1,99 @@
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.counter {
+  font-variant-numeric: tabular-nums;
+}
+
+.viewport {
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--background-secondary);
+}
+
+.track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.slide {
+  min-width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.image {
+  width: min(100%, 520px);
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.2);
+}
+
+.caption {
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 420px;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.controlButton {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.controlButton:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.controlButton:active {
+  transform: scale(0.98);
+}
+
+.dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.dotActive {
+  background: var(--primary-color);
+}
