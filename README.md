@@ -1,10 +1,10 @@
-# Vite + React + TypeScript Boilerplate 
+# Vite + React + TypeScript Boilerplate
 
 A **production-ready**, **highly customizable** boilerplate for building modern web applications with Vite, React, and TypeScript.
 
 > ** Easy to Customize**: Rebrand the entire app in 5 minutes! See [CUSTOMIZATION.md](CUSTOMIZATION.md)
 
-## Features 
+## Features
 
 - **Vite** - Lightning-fast development with HMR
 - **React 18** - Latest React with concurrent features
@@ -25,7 +25,7 @@ A **production-ready**, **highly customizable** boilerplate for building modern 
 - **Responsive** - Mobile-first design approach
 - **Testing** - Vitest + React Testing Library
 
-##  Quick Customization (5 Minutes)
+## Quick Customization (5 Minutes)
 
 ### Prerequisites
 
@@ -48,7 +48,6 @@ npm run dev
 ```
 
 The app will be running at `http://localhost:3000`
-
 
 ## Available Scripts
 
@@ -125,7 +124,7 @@ Available aliases:
 - `@assets/*` → `./src/assets/*`
 - `@config/*` → `./src/config/*` ← **For site/theme config**
 
-## Configuration 
+## Configuration
 
 ### Centralized Configuration
 
@@ -182,6 +181,7 @@ Global CSS variables are defined in `src/styles/index.css`:
 ```bash
 VITE_API_URL=http://localhost:4000
 VITE_APP_NAME=My App
+VITE_ENABLE_ANALYTICS=false
 ```
 
 Access in code:
@@ -189,6 +189,9 @@ Access in code:
 ```typescript
 const apiUrl = import.meta.env.VITE_API_URL
 ```
+
+Analytics is a no-op by default. Set `VITE_ENABLE_ANALYTICS=true` to enable
+console-based event logging in development.
 
 ## Custom Hooks 🪝
 
